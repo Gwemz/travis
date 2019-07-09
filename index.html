@@ -1,12 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>travis</title>
 </head>
+
 <body>
     <h1>travis</h1>
 </body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    // let person = 'daguo';
+    // console.log(`my name is ${person}`);
+    // let num = Math.random();
+    // document.write(`you num is ${num}`);
+    var data = {
+        articleid: '1515123625'
+    }
+    // data.articleid = getParam('id')
+    $.ajax({
+        type: 'post',
+        url: 'http://second.yuezhicui.cn/danzi/api/imsEweiShopShareArticle/forward.hn',
+        dataType: 'jsonp',
+        crossDomain: true,
+        async: false,
+        xhrFields: {
+            withCredentials: true
+        },
+        data: data,
+        success: function (res) {
+            alert(res)
+        },
+        error: function (xhr) {
+            console.log('222', xhr)
+        }
+    })
+    // alert(window.location.href)
+    // alert(getParam('code'))
+</script>
+
 </html>
